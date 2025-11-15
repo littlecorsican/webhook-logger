@@ -37,9 +37,9 @@ jobs:
           echo "Registry: $REGISTRY"
 
           # Build image
-          docker build -t $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
+          docker build -t $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ github.ref }} .
 
           # Push image
-          docker push $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker push $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ github.ref }}
 
-          echo "Pushed image: $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
+          echo "Pushed image: $REGISTRY/${{ env.ECR_REPOSITORY }}:${{ github.ref }}"
