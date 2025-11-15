@@ -7,9 +7,9 @@ on:
       - master
 
 env:
-  AWS_REGION: ap-southeast-1              # change if needed
-  ECR_REPOSITORY: webhook-logger          # name of your ECR repo
-  IMAGE_TAG: ${{ github.sha }}            # use commit SHA as tag
+  AWS_REGION: ap-southeast-1
+  ECR_REPOSITORY: webhook_callback
+  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   build-and-push:
